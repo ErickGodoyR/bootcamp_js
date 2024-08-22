@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    
+    <!--libreria bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">    
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="claro">
+
+    <header>
+      
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">          
+              <a class="navbar-brand" href="#" id="titulo">Erick Godoy</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link"  href="#" id="btn-home-2">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#skill" id="btn-features">Skills</a>
+                  </li>  
+                  <li class="nav-item">
+                    <a class="nav-link" href="#trabajos" id="btn-features">Trabajos</a>
+                  </li>                
+                  <li class="nav-item" id="main">
+                    <a class="nav-link" href="#" id="btn-modal">Contacto</a>
+                  </li>
+                  <li class="nav-item">                    
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                        <label class="form-check-label" for="flexSwitchCheckChecked" >dia/noche</label>
+                      </div>                   
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+
+    <main>
+
+      <!--modal con formulario-->
+      <div class="modal">
+
+        <div class="contacto card mt-3" id="contactame">
+          <div class="card-header">
+            <h2 class="text-center text-uppercase">contacto</h2>
+          </div>
+          <div class="card-body">
+            <form action="index.html" class="row g-3" name="miForm">
+                <div class="row">
+                  <div class="col mb-3 mt-3">
+                    <input type="text" class="form-control" 
+                           placeholder="Ingresa tu nombre" 
+                           aria-label="First name"
+                           id="nombre"
+                           name="nombre"
+                           onblur="habilitarCheck()"
+                           required>
+                  </div>
+                  <div class="col mb-3 mt-3">
+                    <input type="text" class="form-control" 
+                           placeholder="Ingresa tu apellido" 
+                           aria-label="Last name"
+                           id="apellido"
+                           name="apellido"
+                           onblur="habilitarCheck()"
+                           required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <input type="email" class="form-control" 
+                           placeholder="Ingresa email" 
+                           aria-label="First name"
+                           id="email"
+                           name="email"
+                           onblur="habilitarCheck()"
+                           required>
+                  </div>
+                  <div class="col">
+                    <input type="tel" class="form-control" 
+                           placeholder="ingresa tu celular" 
+                           aria-label="Last name"
+                           id="celular"
+                           name="celular"
+                           onblur="habilitarCheck()"
+                           required>
+                  </div>
+                </div>
+                <div class="mb-3 mt-3">
+                  <textarea class="form-control" id="validationTextarea" name="consulta" 
+                  placeholder="Ingresa tu consulta" onblur="habilitarCheck()" required></textarea>
+                </div>
+                
+                <!--Checkbox-->
+                <div class="form-check mb-3">
+                  <input type="checkbox" name="micheckbox" class="form-check-input" 
+                  id="micheckbox" onclick="validarDatos()" disabled required>
+                  <label class="confirmar form-check-label" for="validationFormCheck1">Confirmar datos ingresados correctamente</label>
+                  <div class="invalid-feedback">Example invalid feedback text</div>
+                </div>
+
+                <div class="col-12 text-center">
+                  <button class="btn" id="btn_enviar" type="submit" disabled>Enviar</button>
+                  <i type="button" class="fa-regular fa-circle-xmark fa-2x" id="btn-cerrar-modal"></i>
+                </div>
+
+                <!--<input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html">-->
+                <!--<input type="hidden" name="_next" value="https://portafolio-egr.netlify.app/">-->
+                <input type="hidden" name="_captcha" value="false">
+            
+              </form>
+            </div>
+        </div>
+
+      </div>
+      
+      <!---->
+
+
+        <!--Presentacion-->
+        <section class="presentacion mt-5">
+            <div class="card mb-3 " style="max-width: 100%;" id="card-presentacion">
+                <div class="row g-0">
+                  <div class="col-md-4" id="imagen-presentacion">
+                    <img src="assets/img/IMG-20230125-WA0028.jpg" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body ">
+                      <h2 class="card-title text-center">Erick Alexis Godoy Rojas</h2>                      
+                      <p class="card-text text-justify" id="descripcion">Soy titulado de Ingeniería en Informática y me apasiona el mundo del desarrollo web, actualmente me encuentro en el desarrollo de un Bootcamp de JavaScriptfuga para aumentar conocimiento en éste lenguaje.</p>                
+                    </div>
+                    <div class="rrss col" id="iconos_rrss">
+                      <!--opcion de fontawesome-->
+                      <a href="https://www.linkedin.com/in/erick-godoy-bb2bb28a/" target="_blank">
+                        <i class="fa-brands fa-linkedin" id="icono_linkedin"></i>
+                      </a>                                              
+                      <!--opcion de fontawesome-->
+                      <a href="https://github.com/ErickGodoyR" target="_blank">
+                        <i class="fa-brands fa-square-github" id="icono_github"></i>
+                      </a>
+                      <!--Celular-->
+                      <!--
+                      <a href="tel:976187774" id="celular">
+                        <i class="fa-light fa-mobile"></i>
+                      </a>
+                      -->                
+        
+                  </div>
+                  </div>
+                </div>
+              </div>            
+        </section>
+
+
+        <!--skill-->
+        <section class="mt-5" id="skill">
+            <h2 class="text-center">Skills</h2>
+            <div class="container mt-5">
+                <div class="row row-cols-2 row-cols-sm-3 row-cols-md-8" id="skills">
+                    <div class="col pb-3">
+                        <img src="assets/img/skills/html.png" class="card-img" alt="...">
+                    </div>
+                    <div class="col pb-3">
+                        <img src="assets/img/skills/css-3.png" class="card-img" alt="...">
+                    </div>
+                    <div class="col pb-3">
+                        <img src="assets/img/skills/bootstrap.png" class="card-img" alt="...">
+                    </div>
+                    <div class="col pb-3">
+                        <img src="assets/img/skills/github.png" class="card-img" alt="...">
+                    </div>
+                    <div class="col pb-3">
+                        <img src="assets/img/skills/Javascript.png" class="card-img" alt="...">
+                    </div>
+                    <div class="col pb-3">
+                        <img src="assets/img/skills/spring.png" class="card-img" alt="...">
+                    </div>
+                    <div class="col pb-3">
+                        <img src="assets/img/skills/MySQL.png" class="card-img" alt="...">
+                    </div>
+                </div>
+              </div>
+        </section>
+
+
+        <!--trabajos-->
+        <section class="mt-5" id="trabajos">
+            <h2 class="text-center">Trabajos</h2>
+            <div class="container mt-5">
+                <div class="row row-cols-2 row-cols-sm-3 row-cols-md-3">
+                  
+                  <!--Sistema exámenes--> 
+                  <div class="col pb-3 mt-3">
+                    <div class="card border-info">
+                        <img src="assets/img/proyectos/trabajo1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Sistema de Examenes</h5>
+                            <p class="card-text">Sistema realizado para la creación de examenes para estudiantes. Cuenta con perfiles de administrador y usuario.</p>
+                        </div>
+                        <div class="card">
+                            <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="https://github.com/ErickGodoyR/Sistema_Examenes" target="_blank" class="card-link text-uppercase">ver codigo github</a>
+                            </li>                             
+                            </ul>
+                          </div>                   
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted text-center">HTML-CSS-SPRING BOOT-ANGULAR-MYSQL</small>
+                    </div>
+                  </div>                       
+                    
+                  <!--pokedex-->
+                  <div class="col pb-3 mt-3">
+                    <div class="card border-info">
+                        <img src="assets/img/proyectos/pokedex.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Pokedex</h5>
+                            <p class="card-text">Se utiliza API de pokemon para realizar pokedex de práctica.</p>
+                        </div>
+                        <div class="card">
+                            <ul class="list-group list-group-flush">                            
+                            </ul>
+                          </div>                   
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted text-center">HTML-CSS-JS</small>
+                    </div>
+                  </div>
+
+                  <!--Gestión de empleados-->
+                  <div class="col pb-3 mt-3">
+                    <div class="card border-info">
+                        <img src="assets/img/proyectos/gestionEmpleados.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Gestión Empleados</h5>
+                            <p class="card-text">Se realiza CRUD para el registro de empleados.</p>
+                        </div>
+                        <div class="card">
+                            <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="https://github.com/ErickGodoyR/crud-spring_boot-angular" target="_blank" class="card-link text-uppercase">ver codigo github</a>
+                            </li>                             
+                            </ul>
+                          </div>                   
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted text-center">HTML-CSS-SPRING BOOT-ANGULAR-MYSQL</small>
+                    </div>
+                  </div>
+                     
+                  </div> 
+                </div>                         
+        </section>
+
+    </main>
+
+
+
+    <footer>
+      <div class="container-footer mt-5">
+          <div class="row">
+              <div class="col">
+                  <h3 class="text-center fs-5">Derechos reservados Erick Godoy Rojas</h3>    
+              </div>
+          </div>
+      </div>
+  </footer>
+
+    <!--libreria jquery-->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
+    <script src="assets/js/index.js"></script>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+</body>
+</html>
