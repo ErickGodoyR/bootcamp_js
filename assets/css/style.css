@@ -1,7 +1,6 @@
 * {
     padding: 0px;
     margin: 0px;
-    overflow: hidden; /*para que no se pase del margen de la pantalla*/
     font-family: Verdana;
 }
 
@@ -59,6 +58,7 @@ nav {
 body {
     background-color: var(--body);
     color: var(--titulo);
+    overflow: hidden; /*para que no se pase del margen de la pantalla*/
 }
 
 header {
