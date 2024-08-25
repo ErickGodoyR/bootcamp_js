@@ -58,7 +58,7 @@ nav {
 body {
     background-color: var(--body);
     color: var(--titulo);
-    overflow: hidden; /*para que no se pase del margen de la pantalla*/
+    /*overflow: hidden; para que no se pase del margen de la pantalla*/
 }
 
 header {
